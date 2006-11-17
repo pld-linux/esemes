@@ -9,6 +9,7 @@ Source0:	http://download.berlios.de/sms/%{name}-%{version}.tar.bz2
 # Source0-md5:	ce77b7ad8462b8846e4b1eadb9f5b00f
 URL:		http://sms.berlios.de/
 BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	sed >= 4.0
 %pyrequires_eq  python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,7 +26,7 @@ Orange.
 %setup -q
 
 %build
-sed -e "s@python2.4@python@g" -i esemes misc.py
+%{__sed} -e -i "s@python2.4@python@g" esemes misc.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
