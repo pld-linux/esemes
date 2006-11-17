@@ -26,7 +26,7 @@ Orange.
 %setup -q
 
 %build
-%{__sed} -e -i "s@python2.4@python@g" esemes misc.py
+%{__sed} -i -e "s@python2.4@python@g" esemes misc.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
