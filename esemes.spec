@@ -1,5 +1,5 @@
 Summary:	Send SMS via Polish GSM operators
-Summary(pl):	Program do wysy³ania krótkich wiadomo¶ci (SMS)
+Summary(pl):	Program do wysy³ania krótkich wiadomo¶ci (SMS) do polskich sieci GSM
 Name:		esemes
 Version:	0.11
 Release:	1
@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Source0:	http://download.berlios.de/sms/%{name}-%{version}.tar.bz2
 # Source0-md5:	ce77b7ad8462b8846e4b1eadb9f5b00f
 URL:		http://sms.berlios.de/
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	sed >= 4.0
 %pyrequires_eq  python-modules
@@ -31,8 +32,12 @@ Orange.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -D %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -d $RPM_BUILD_ROOT%{py_scriptdir}
-install *.py $RPM_BUILD_ROOT%{py_scriptdir}
+install -d $RPM_BUILD_ROOT%{py_sitescriptdir}
+install *.py $RPM_BUILD_ROOT%{py_sitescriptdir}
+
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -41,4 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README*
 %attr(755,root,root) %{_bindir}/%{name}
-%{py_scriptdir}/*.py
+%{py_sitescriptdir}/*.py[co]
