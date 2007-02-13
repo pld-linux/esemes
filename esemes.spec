@@ -1,5 +1,5 @@
 Summary:	Send SMS via Polish GSM operators
-Summary(pl.UTF-8):   Program do wysyłania krótkich wiadomości (SMS) do polskich sieci GSM
+Summary(pl.UTF-8):	Program do wysyłania krótkich wiadomości (SMS) do polskich sieci GSM
 Name:		esemes
 Version:	0.11
 Release:	1
