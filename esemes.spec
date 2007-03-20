@@ -1,5 +1,5 @@
 Summary:	Send SMS via Polish GSM operators
-Summary(pl.UTF-8):	Program do wysy≈Çania kr√≥tkich wiadomo≈õci (SMS) do polskich sieci GSM
+Summary(pl):	Program do wysy≥ania krÛtkich wiadomo∂ci (SMS) do polskich sieci GSM
 Name:		esemes
 Version:	0.11
 Release:	1
@@ -19,8 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This program sends SMS to mobile phones operaterd by Polish GSM
 operators: Era, Plus and Orange.
 
-%description -l pl.UTF-8
-Program potrafi wysy≈Çaƒá wiadomo≈õci na telefony sieci Era, Plus oraz
+%description -l pl
+Program potrafi wysy≥aÊ wiadomo∂ci na telefony sieci Era, Plus oraz
 Orange.
 
 %prep
