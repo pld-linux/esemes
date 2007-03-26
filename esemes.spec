@@ -28,10 +28,12 @@ Orange.
 
 %build
 %{__sed} -i -e "s@python2.4@python@g" esemes misc.py
+%{__sed} -i 's/README.smsrc/README.esemesrc/' esemes
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -D %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
+
 install -d $RPM_BUILD_ROOT%{py_sitescriptdir}
 install *.py $RPM_BUILD_ROOT%{py_sitescriptdir}
 
